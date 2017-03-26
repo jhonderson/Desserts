@@ -1,0 +1,47 @@
+<% content_for :head_left do %>
+  <h2><%= t('desserts_categories.show.title')%>: <%= @desserts_category.name %></h2>
+<% end %>
+
+<% content_for :head_right do %>
+  <h2><%= link_to t('forms.buttons.back'), desserts_categories_path, class: "btn btn-default pull-right" %></h2>
+<% end %>
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+    <%= image_tag(@desserts_category.image_url, height: '400', width: '400', class: "img-circle")%>
+    <h2><%= @desserts_category.name %></h2>
+    <% unless @current_user.nil?%>
+      <%= link_to t('forms.buttons.edit'), edit_desserts_category_path(@desserts_category), class: "btn btn-default" %>
+      <%= link_to t('forms.buttons.delete'), @desserts_category, method: :delete, data: {confirm: t('desserts_categories.index.conformations.delete')}, class: "btn btn-default" %>
+      <%= link_to t('desserts.index.buttons.create'), new_desserts_category_dessert_path(@desserts_category), class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
+
+<% @desserts_category.dessert.each do |dessert| %>
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 <%= cycle("col-md-push-5","", name: "cycle_text")%>">
+      <h2 class="featurette-heading"><%= dessert.name %> <span class="text-muted">...</span></h2>
+      <p class="lead"><%= dessert.description %></p>
+      <%= link_to t('desserts.index.buttons.show'), dessert, class: "btn btn-default" %>
+      <% unless @current_user.nil?%>
+        <%= link_to t('forms.buttons.edit'), edit_dessert_path(dessert), class: "btn btn-default" %>
+        <%= link_to t('forms.buttons.delete'), dessert, method: :delete, data: {confirm: t('desserts.index.conformations.delete')}, class: "btn btn-default" %>
+      <% end %>
+    </div>
+    <div class="col-md-5 <%= cycle("col-md-pull-7","", name: "cycle_image")%>">
+      <%= link_to image_tag(dessert.image_url, height: '500', width: '500', class: "featurette-image img-responsive center-block"), dessert%>
+    </div>
+  </div>
+<% end %>
+<% unless @desserts_category.dessert.empty?  %>
+  <hr class="top-divider">
+<% end %>
+
+<% content_for :footer do %>
+  <h2>
+    <%= link_to t('forms.buttons.cancel'), desserts_categories_path, class: "btn btn-default" %>
+  </h2>
+<% end %>

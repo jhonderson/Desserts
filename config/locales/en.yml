@@ -1,0 +1,133 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        id: "Identifier"
+        username: "Username"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        first_name: "First Name"
+        last_name: "Last Name"
+        name: "Name"
+        is_admin: "Administrator"
+        is_not_admin: "Ordinary user"
+        user_type: "User type"
+        actions: "Actions"
+      desserts_category:
+        name: "Name"
+        image_url: "Image url"
+        actions: "Actions"
+      dessert:
+        name: "Name"
+        image_url: "Image url"
+        description: "Description"
+        retail_price: "Retail Price"
+        wholesale_price: "Wholesale Price"
+        desserts_category_id: "Category"
+        actions: "Actions"
+  forms:
+    labels:
+      username_or_email: "Username or Email"
+      password: "Password"
+    messages:
+      success: "Operation succeeded!"
+      error: "Operation with errors!"
+    buttons:
+      edit: "Edit"
+      create: "Create"
+      cancel: "Cancel"
+      back: "Back"
+      submit: "Submit"
+      delete: "Delete"
+      login: "Login"
+      show: "Show"
+  menu:
+    title: "Desserts"
+    home: "Home"
+    products: "Products"
+    contact: "Contact"
+    users:
+      title: "Users"
+      list: "User List"
+      new: "Add an user"
+    login: "Login"
+    logout: "Logout"
+    welcome: "Welcome"
+    footer:
+      desserts: "Desserts"
+      back_to_top: "Back to top"
+    languages:
+      lang: "Language"
+      es: "Spanish"
+      en: "English"
+  users:
+    index:
+      title: "List of users"
+      empty_results: "There are not users."
+      conformations:
+        delete: "Are you sure want to delete the user?"
+      buttons:
+        create: "New User"
+    edit:
+      title: "Edit user"
+    new:
+      title: "New user"
+  desserts_categories:
+    index:
+      title: "List of Categories"
+      empty_results: "There are not categories."
+      conformations:
+        delete: "Are you sure want to delete the category?"
+      buttons:
+        create: "New Category"
+        show: "See Desserts"
+    edit:
+      title: "Edit Category"
+    new:
+      title: "New Category"
+    show:
+      title: "Category Details"
+      buttons:
+        edit: "Edit Category"
+  desserts:
+    index:
+      title: "List of Desserts"
+      empty_results: "There are not desserts."
+      conformations:
+        delete: "Are you sure want to delete the dessert?"
+      buttons:
+        create: "New Dessert"
+        show: "See Dessert"
+    edit:
+      title: "Edit Dessert"
+    new:
+      title: "New Dessert"
+    show:
+      title: "Dessert Details"
+  sessions:
+    home:
+      title: "Home"
+    login:
+      title: "Login"
+      messages:
+        error: "Invalid Username or Password"
+        success: "Welcome!, you logged in as %{user}"
+  contacts:
+    index:
+      title: "Contact"
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "No %{model} found"
+        one:   "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"

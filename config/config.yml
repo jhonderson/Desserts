@@ -1,0 +1,18 @@
+defaults: &defaults
+  app_name: Postres
+  app_year: 2015
+  contact_name: Lady Sanchez
+  contact_email: jhoanna2309@gmail.com
+  contact_cell_number: 3175430298
+  contact_city: Cali
+  contact_state: Valle del Cauca
+  contact_country: Colombia
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

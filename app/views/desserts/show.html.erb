@@ -1,0 +1,30 @@
+<% content_for :head_left do %>
+  <h2><%= t('desserts.show.title')%>: <%= @dessert.name %></h2>
+<% end %>
+<% content_for :head_right do %>
+  <h2><%= link_to t('forms.buttons.back'), @dessert.desserts_category, class: "btn btn-default pull-right" %></h2>
+<% end %>
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+    <%= image_tag(@dessert.image_url, height: '400', width: '400', class: "img-circle")%>
+    <h2><%= @dessert.name %></h2>
+    <p><%= @dessert.description %></p>
+    <p>
+      <strong><%= t('activerecord.attributes.dessert.retail_price')%>:</strong>
+      <%= @dessert.retail_price %>
+    </p>
+    <p>
+      <strong><%= t('activerecord.attributes.dessert.wholesale_price')%>:</strong>
+      <%= @dessert.wholesale_price %>
+    </p>
+    <% unless @current_user.nil?%>
+      <%= link_to t('forms.buttons.edit'), edit_dessert_path(@dessert), class: "btn btn-default" %>
+      <%= link_to t('forms.buttons.delete'), @dessert, method: :delete, data: {confirm: t('desserts.index.conformations.delete')}, class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
+ 
+<% content_for :footer do %>
+  <%= link_to t('forms.buttons.cancel'), @dessert.desserts_category, class: "btn btn-default" %>
+<% end %>
